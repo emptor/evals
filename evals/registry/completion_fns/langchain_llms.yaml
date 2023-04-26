@@ -17,4 +17,54 @@ langchain/llm/flan-t5-xl:
   args:
     llm: HuggingFaceHub
     llm_kwargs:
-      repo_id: google/flan-t5-xl
+      repo_id: google/flan-t5-xxl
+
+langchain/llm/flan-ul2:
+  class: evals.completion_fns.langchain_llm:LangChainLLMCompletionFn
+  args:
+    llm: HuggingFaceHub
+    llm_kwargs:
+      repo_id: google/flan-ul2
+
+langchain/llm/flan-t5-replicate:
+  class: evals.completion_fns.langchain_llm:LangChainLLMCompletionFn
+  args:
+    llm: Replicate
+    llm_kwargs:
+      model: daanelson/flan-t5:04e422a9b85baed86a4f24981d7f9953e20c5fd82f6103b74ebc431588e1cec8
+
+langchain/llm/llama-7b:
+  class: evals.completion_fns.langchain_llm:LangChainLLMCompletionFn
+  args:
+    llm: Replicate
+    llm_kwargs:
+      model: replicate/llama-7b:2014ee1247354f2e81c0b3650d71ca715bc1e610189855f134c30ecb841fae21
+
+langchain/llm/gpt-neox-20b:
+  class: evals.completion_fns.langchain_llm:LangChainLLMCompletionFn
+  args:
+    llm: ForefrontAI
+    llm_kwargs:
+      endpoint_url: "https://shared-api.forefront.link/organization/bmFhThdQK49P/gpt-neox-20b-vanilla/completions/vanilla"
+      length: 5
+
+langchain/llm/a21-jurassic-jumbo:
+  class: evals.completion_fns.langchain_llm:LangChainLLMCompletionFn
+  args:
+    llm: AI21
+    llm_kwargs:
+      model: j2-jumbo-instruct
+      ai21_api_key: CTPmMsN79NbNrEfol88pCDQvvoMP8Adp
+
+
+langchain/llm/anthropic-claude:
+  class: evals.completion_fns.langchain_llm:LangChainLLMCompletionFn
+  args:
+    llm: Anthropic
+
+langchain/llm/cohere-generate:
+  class: evals.completion_fns.langchain_llm:LangChainLLMCompletionFn
+  args:
+    llm: Cohere
+    llm_kwargs:
+      max_tokens: 2
